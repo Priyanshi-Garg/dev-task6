@@ -1,7 +1,7 @@
 job("devops_task6_job1"){
   description("Pull the data from github repo automatically when some developers push code to github")
   scm{
-    github("","master")
+    github("Priyanshi-Garg/dev-task6.git","master")
   }
   triggers {
     scm("* * * * *")
