@@ -88,13 +88,13 @@ triggers {
 }
 
 buildPipelineView('Pipeline') {
-    filterBuildQueue(true)
+    filterBuildQueue(false)
     filterExecutors(false)
     title("Task-6")
-    displayedBuilds(5)
+    displayedBuilds(1)
     selectedJob("dev-t6-job1")
     alwaysAllowManualTrigger(true)
     showPipelineParameters(true)
-    refreshFrequency(20)
+    refreshFrequency(5)
 }
 
