@@ -72,7 +72,7 @@ job("dev-t6-job4 "){
   description("If app is not working , then send email to developer with error messages and redeploy the application after code is being edited by the developer .")
 
 triggers {
-    upstream("dev-t6-job3", "FAILURE")
+    upstream("dev-t6-job3", "SUCCESS")
   }
   steps{
     shell('''
@@ -93,8 +93,8 @@ buildPipelineView('Pipeline') {
     title('Task-6')
     displayedBuilds(5)
     selectedJob('dev-t6-job1')
-    alwaysAllowManualTrigger()
-    showPipelineParameters()
+    alwaysAllowManualTrigger(true)
+    showPipelineParameters(true)
     refreshFrequency(20)
 }
 
