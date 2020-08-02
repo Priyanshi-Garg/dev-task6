@@ -19,7 +19,7 @@ fi
 }
 
 job("dev-t6-job2"){
-  description("By looking at the code it will launch the deployment of respective webserver and the deployment will launch webserver, create PVC and expose the deployment")
+  description("By looking at the code or program file, Jenkins should automatically start the respective language interpreter installed image container to deploy code on top of Kubernetes ( eg. If code is of PHP, then Jenkins should start the container that has PHP already installed ) .")
   
   authenticationToken('deploy')
   
@@ -69,15 +69,20 @@ fi
 }
 
 job("dev-t6-job4 "){
-  description("This Job is created for monitoring of the container and to launch another if the existing fails.")
+  description("If app is not working , then send email to developer with error messages and redeploy the application after code is being edited by the developer .")
 
 triggers {
-    upstream("dev-t6-job3", "FAILURE")
+    upstream("dev-t6-job3", "SUCCESS")
   }
   steps{
     shell('''
+    if sudo kubectl get deployments | grep html-deploy
+    then
+    echo "Everything is fine"
+    else
     sudo python3 /root/mail.py
     sudo curl -I --user admin:pg1103 http://192.168.99.102:8080//job/dev-t6-job2/build?token=deploy
+    fi
 ''')
 }
 }
