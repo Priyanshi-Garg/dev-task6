@@ -27,10 +27,10 @@ job("dev-t6-job2"){
     upstream("dev-t6-job1", "SUCCESS")
   }
   steps{
-    cd /task6-ws
-if ls | grep ".html"
+cd /task6-ws
+if (ls | grep ".html")
 then
-if ls | grep ws-html
+if (ls | grep ws-html)
 then
 rm -rvf /task6-ws/ws-html
 mkdir /task6-ws/ws-html
