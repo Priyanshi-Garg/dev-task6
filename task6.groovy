@@ -72,7 +72,7 @@ job("dev-t6-job4 "){
   description("This Job is created for monitoring of the container and to launch another if the existing fails.")
 
 triggers {
-    upstream("dev-t6-job3", "SUCCESS")
+    upstream("dev-t6-job3", "FAILED")
   }
   steps{
     shell('''
