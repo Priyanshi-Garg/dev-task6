@@ -38,21 +38,14 @@ else
 sudo mkdir /task6-ws/ws-html
 fi
 sudo cp -rvf /task6-ws/*.html /task6-ws/ws-html
-if kubectl get deployment html-deploy
-then
+
 sudo kubectl delete -f task-6.yml
 sudo kubectl create -f task-6.yml
 sleep 20
 cd /task6-ws/ws-html
 ls
 sshpass -p "<minikube_password>" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r * docker@192.168.99.101:/home/docker/devops-task6
-else
-sudo kubectl create -f task-6.yml
-sleep 20
-cd /task6-ws/ws-html
-ls
-sshpass -p "<minikube_password>" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r * docker@192.168.99.101:/home/docker/devops-task6
-fi
+
 fi
 EOT 
 ''')
