@@ -44,7 +44,7 @@ sudo kubectl create -f task-6.yml
 sleep 20
 cd /task6-ws/ws-html
 ls
-sshpass -p "tcuser" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r * docker@192.168.99.101:/home/docker/devops-task6
+sshpass -p "tcuser" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r * docker@192.168.99.105:/home/docker/devops-task6
 
 fi
 EOT 
