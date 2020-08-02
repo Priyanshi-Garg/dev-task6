@@ -88,7 +88,7 @@ triggers {
 }
 
 buildPipelineView('Pipeline') {
-    filterBuildQueue(false)
+    filterBuildQueue(true)
     filterExecutors(false)
     title("Task-6")
     displayedBuilds(1)
