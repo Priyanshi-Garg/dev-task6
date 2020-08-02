@@ -27,10 +27,10 @@ job("dev-t6-job2"){
     upstream("dev-t6-job1", "SUCCESS")
   }
   steps{
-cd /task6-ws
-if (ls | grep ".html")
+shell('''cd /task6-ws
+if ls | grep ".html"
 then
-if (ls | grep ws-html)
+if ls | grep ws-html
 then
 rm -rvf /task6-ws/ws-html
 mkdir /task6-ws/ws-html
@@ -54,8 +54,9 @@ ls
 sshpass -p "<minikube_password>" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r * docker@192.168.99.101:/home/docker/devops-task6
 fi
 fi
-EOT
-}
+EOT 
+''')
+  }
 }
 
 job("dev-t6-job3"){
