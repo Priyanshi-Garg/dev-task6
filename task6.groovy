@@ -65,7 +65,7 @@ else
 exit 1
 fi
 ''')
-	}
+ }
 }
 
 job("dev-t6-job4 "){
