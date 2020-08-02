@@ -87,7 +87,7 @@ triggers {
 }
 }
 
-buildPipelineView("Task6-Pipeline") {
+buildPipelineView("Pipeline_Of_task-6") {
     filterBuildQueue(true)
     filterExecutors(false)
     title("Task-6")
