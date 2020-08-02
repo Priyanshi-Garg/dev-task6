@@ -57,7 +57,7 @@ job("dev-t6-job3"){
 		upstream('dev-t6-job2' , 'SUCCESS')
 	}
 	steps{
-		shell('''status=$(curl -o /dev/null  -s  -w "%{http_code}"  http://192.168.99.101:30000)
+		shell('''status=$(curl -o /dev/null  -s  -w "%{http_code}"  http://192.168.99.105:30000)
 if [ $status == 200 ]
 then
 exit 1
@@ -77,7 +77,7 @@ triggers {
   steps{
     shell('''
     sudo python3 /root/mail.py
-    sudo curl -I --user admin:pg1103 http://192.168.99.100:8080//job/dev-t6-job2/build?token=deploy
+    sudo curl -I --user admin:pg1103 http://192.168.99.102:8080//job/dev-t6-job2/build?token=deploy
 ''')
 }
 }
