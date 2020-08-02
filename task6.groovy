@@ -81,7 +81,7 @@ triggers {
     echo "Everything is fine"
     else
     sudo python3 /root/mail.py
-    sudo curl -I --user admin:pg1103 http://192.168.99.102:8080//job/dev-t6-job2/build?token=deploy
+    sudo curl -I --user admin:<password> http://192.168.99.102:8080//job/dev-t6-job2/build?token=deploy
     fi
 ''')
 }
