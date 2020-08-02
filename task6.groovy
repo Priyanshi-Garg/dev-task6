@@ -60,9 +60,9 @@ job("dev-t6-job3"){
 		shell('''status=$(curl -o /dev/null  -s  -w "%{http_code}"  http://192.168.99.105:30000)
 if [ $status == 200 ]
 then
-exit 1
-else
 exit 0
+else
+exit 1
 fi
 ''')
 	}
