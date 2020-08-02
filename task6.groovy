@@ -33,9 +33,9 @@ then
 if ls | grep ws-html
 then
 rm -rvf /task6-ws/ws-html
-mkdir /task6-ws/ws-html
+sudo mkdir /task6-ws/ws-html
 else
-mkdir /task6-ws/ws-html
+sudo mkdir /task6-ws/ws-html
 fi
 cp -rvf /task6-ws/*.html /task6-ws/ws-html
 if kubectl get deployment html-deploy
