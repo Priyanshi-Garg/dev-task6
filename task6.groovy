@@ -32,12 +32,12 @@ if ls | grep ".html"
 then
 if ls | grep ws-html
 then
-rm -rvf /task6-ws/ws-html
+sudo rm -rvf /task6-ws/ws-html
 sudo mkdir /task6-ws/ws-html
 else
 sudo mkdir /task6-ws/ws-html
 fi
-cp -rvf /task6-ws/*.html /task6-ws/ws-html
+sudo cp -rvf /task6-ws/*.html /task6-ws/ws-html
 if kubectl get deployment html-deploy
 then
 sudo kubectl delete -f task-6.yml
